@@ -27,7 +27,7 @@ Ext.application({
     ],
     icon: {
         '57':   'resources/icons/Icon.png',
-        '72':   'resources/icons/IIcon~ipad.png',
+        '72':   'resources/icons/Icon~ipad.png',
         '114': 'resources/icons/Icon@2x.png'
     },
     isIconPrecomposed: true,
