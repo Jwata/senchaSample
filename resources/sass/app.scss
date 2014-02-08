@@ -1,10 +1,13 @@
-// The following two lines import the default Sencha Touch theme. If you are building
-// a new theme, remove them and the add your own CSS on top of the base CSS (which
-// is already included in your app.json file).
+// Basic color definitions
+$base-color: #333;
+$base-gradient: 'matte';
+$active-color: #36B8FF;
+ 
+// Toolbar styles
+$toolbar-base-color: #444;
+ 
+// List styles
+$list-header-bg-color : #ABE2FF;
+ 
 @import 'sencha-touch/default';
 @import 'sencha-touch/default/all';
-
-// Custom code goes here..
-
-// Examples of using the icon mixin:
-// @include icon('user');
