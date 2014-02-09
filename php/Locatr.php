@@ -3,9 +3,9 @@ class Locatr {
     const REQUEST_TYPE_NEAR_BY_SEAECH = 'nearbysearch';
     private static function getRequestUrl($request_type)
     {
-        $sample_query = 'location=-33.8670522,151.1957362&radius=500&types=food&name=harbour&sensor=false&key=AIzaSyALaaTiK4AB1IVJQ_mStNWxX3GOieSnOTU';
+        // @todo: validation parameter
         $request_url = sprintf('%s/%s/%s?%s',
-            BASE_API_URL, $request_type, DATA_OUTPUT_TYPE, /* $_SERVER['QUERY_STRING'] */ $sample_query);
+            BASE_API_URL, $request_type, DATA_OUTPUT_TYPE, $_SERVER['QUERY_STRING']);
 
         return html_entity_decode($request_url);
     }
@@ -37,7 +37,7 @@ class Locatr {
             $item = "";
 
             for ($i = 0; $i < count($data->results); $i++) {
-                $item &= $data->results[$i];
+                $item = $data->results[$i];
                 if (isset($item->photos)) {
                     $image_url = BASE_API_URL
                         ."photo?photoreference".$item->photos[0]->photo_reference
@@ -46,7 +46,7 @@ class Locatr {
                         ."&maxwidth=300"
                         ."&key=".$_GET['key'];
 
-                    $item->photos[0]->url = $image_url;
+                    $data->results[$i]->photos[0]->url = $image_url;
                 }
             }
 

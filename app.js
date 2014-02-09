@@ -11,19 +11,19 @@ Ext.application({
     ],
     views: [
         'Main',
-        'Categories'
-        // 'PlaceList'
+        'Categories',
+        'PlaceList'
     ],
     controllers: [
         'App'
     ],
     models: [
-        'Category'
-        // 'Place'
+        'Category',
+        'Place'
     ],
     stores: [
-        'Categories'
-        // 'Places'
+        'Categories',
+        'Places'
     ],
     icon: {
         '57':   'resources/icons/Icon.png',
