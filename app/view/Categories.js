@@ -5,8 +5,8 @@ Ext.define('LunchMap.view.Categories', {
         cls: 'default-bg, category-list',
         itemTpl: '{name}',
         store: 'Categories',
-        grouped: true,
+        grouped: false,
         indexBar: true,
-        title: "home"
+        title: 'home'
     }
 });

@@ -85,22 +85,21 @@ Ext.define('LunchMap.util.Util', {
 
         // We divide the rating into a part upto maximum value
         for (var i = 1; i <= max; i++) {
-            // For each raging, add a full star
+            var star;
             if (i <= rating) {
-                str += '<div class="star full-stack"></div>';
-            }
-
-            if (i > rating) {
+                star = 'full-star';
+            } else {
                 if (rating % 1 !== 0 && (i - rating) < 1) {
-                    str += '<div class="start half-star"></div>';
+                    star = 'half-star';
                 } else {
-                    str += '<div class="star no-star"></div>';
+                    star = 'no-star';
                 }
             }
 
+            str += '<div class="star ' + star + '"></div>';
         }
 
-        if (!hideRatingValie) {
+        if (!hideRatingValue) {
             str += '<div class="value">' + rating + '</div>';
         }
 

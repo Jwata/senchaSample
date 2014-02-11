@@ -1,0 +1,25 @@
+.ratings {
+    overflow: auto;
+    div.star {
+        float: left;
+        height: 14px;
+        width: 14px;
+        background-size: 12px !important;
+        background-position: 50%;
+        &.full-star {
+            background: url(https://maps.gstatic.com/intl/ja_jp/mapfiles/rating_scale/overall_filled.png) no-repeat;
+        }
+        &.half-star {
+            background: url(https://maps.gstatic.com/intl/ja_jp/mapfiles/rating_scale/overall_half_LTR.png) no-repeat;
+        }
+        &.no-star {
+            background: url(https://maps.gstatic.com/intl/ja_jp/mapfiles/rating_scale/overall_empty.png) no-repeat;
+        }
+    }
+    &.value {
+        float: left;
+        font-size: 13px;
+        font-weight: bold;
+        margin-left: 5px;
+    }
+}
