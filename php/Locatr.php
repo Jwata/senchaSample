@@ -4,7 +4,7 @@ class Locatr {
     private static function getRequestUrl($request_type)
     {
         // @todo: validation parameter
-        $request_url = sprintf('%s/%s/%s?%s',
+        $request_url = sprintf('%s%s/%s?%s',
             BASE_API_URL, $request_type, DATA_OUTPUT_TYPE, $_SERVER['QUERY_STRING']);
 
         return html_entity_decode($request_url);
@@ -40,7 +40,7 @@ class Locatr {
                 $item = $data->results[$i];
                 if (isset($item->photos)) {
                     $image_url = BASE_API_URL
-                        ."photo?photoreference".$item->photos[0]->photo_reference
+                        ."photo?photoreference=".$item->photos[0]->photo_reference
                         ."&sensor=false"
                         ."&maxheight=300"
                         ."&maxwidth=300"

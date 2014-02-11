@@ -13,7 +13,7 @@ Ext.define('LunchMap.view.PlaceList', {
             '{rating:this.getRating}',
             '</div>', {
             getImage: function(data) {
-                var imageDiv;
+                var imageDiv = '';
                 if (data.photos && data.photos.length > 0) {
                     imageDiv += '<div class="photo">';
                     imageDiv += '<img src="' + data.photos[0].url + '" />';

@@ -73,5 +73,39 @@ Ext.define('LunchMap.util.Util', {
         return str.replace(/\w\S*/g, function(txt) {
             return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
         });
+    },
+    getRating: function(rating, max, hideRatingValue) {
+        if (rating === undefined) {
+            return Lang.noRating;
+        }
+
+        var str = '<div class="ratings">';
+        rating = parseFloat(rating);
+        max = max || 5;
+
+        // We divide the rating into a part upto maximum value
+        for (var i = 1; i <= max; i++) {
+            // For each raging, add a full star
+            if (i <= rating) {
+                str += '<div class="star full-stack"></div>';
+            }
+
+            if (i > rating) {
+                if (rating % 1 !== 0 && (i - rating) < 1) {
+                    str += '<div class="start half-star"></div>';
+                } else {
+                    str += '<div class="star no-star"></div>';
+                }
+            }
+
+        }
+
+        if (!hideRatingValie) {
+            str += '<div class="value">' + rating + '</div>';
+        }
+
+        str += '</div>';
+
+        return str;
     }
 });

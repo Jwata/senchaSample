@@ -43,8 +43,9 @@ Ext.define('LunchMap.controller.App', {
         // Else load the places for the saved user's location
         if (!self.util.userLocation) {
             Ext.device.Geolocation.getCurrentPosition({
-                success: function(position) {
-                    self.util.userLocation = position.coords.latitude + ',' + position.coords.longitude;
+                success: function(pos) {
+                    self.util.userLocation =
+                        pos.coords.latitude + ',' + pos.coords.longitude;
                     loadPlaces();
                 },
                 failure: function() {
